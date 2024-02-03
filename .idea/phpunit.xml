@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/doctuch/tests/Unit" />
         <option value="$PROJECT_DIR$/doctuch/tests/Feature" />
+        <option value="$PROJECT_DIR$/development/tests/Unit" />
+        <option value="$PROJECT_DIR$/development/tests/Feature" />
       </list>
     </option>
   </component>
