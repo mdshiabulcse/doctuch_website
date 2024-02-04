@@ -1,73 +1,77 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+    <div id="main-wrapper">
+        <div class="position-relative overflow-hidden radial-gradient min-vh-100 w-100">
+            <div class="position-relative z-index-5">
+                <div class="row">
+                    <div class="col-xl-7 col-xxl-8">
+                        <a href="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/html/index.html" class="text-nowrap logo-img d-block px-4 py-9 w-100">
+                            <img src="{{asset('admin/')}}/assets/images/logos/dark-logo.svg" class="dark-logo" alt="Logo-Dark" />
+                            <img src="{{asset('admin/')}}/assets/images/logos/light-logo.svg" class="light-logo" alt="Logo-light" />
+                        </a>
+                        <div class="d-none d-xl-flex align-items-center justify-content-center" style="height: calc(100vh - 80px);">
+                            <img src="{{asset('admin/')}}/assets/images/backgrounds/login-security.svg" alt="" class="img-fluid" width="500">
                         </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+                    </div>
+                    <div class="col-xl-5 col-xxl-4">
+                        <div class="authentication-login min-vh-100 bg-body row justify-content-center align-items-center p-4">
+                            <div class="col-sm-8 col-md-6 col-xl-9">
+                                <h2 class="mb-3 fs-7 fw-bolder">Welcome to Modernize</h2>
+                                <p class=" mb-9">Your Admin Dashboard</p>
+                                <div class="row">
+                                    <div class="col-6 mb-2 mb-sm-0">
+                                        <a class="btn btn-white text-dark border fw-normal d-flex align-items-center justify-content-center rounded-2 py-8"
+                                           href="javascript:void(0)" role="button">
+                                            <img src="{{asset('admin/')}}/assets/images/svgs/google-icon.svg" alt="" class="img-fluid me-2" width="18"
+                                                 height="18">
+                                            <span class="d-none d-sm-block me-1 flex-shrink-0">Sign in with</span>Google
+                                        </a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a class="btn btn-white text-dark border fw-normal d-flex align-items-center justify-content-center rounded-2 py-8"
+                                           href="javascript:void(0)" role="button">
+                                            <img src="{{asset('admin/')}}/assets/images/svgs/facebook-icon.svg" alt="" class="img-fluid me-2" width="18"
+                                                 height="18">
+                                            <span class="d-none d-sm-block me-1 flex-shrink-0">Sign in with</span>FB
+                                        </a>
+                                    </div>
                                 </div>
+                                <div class="position-relative text-center my-4">
+                                    <p class="mb-0 fs-4 px-3 d-inline-block text-bg-white text-dark z-index-5 position-relative">or sign
+                                        in
+                                        with</p>
+                                    <span class="border-top w-100 position-absolute top-50 start-50 translate-middle"></span>
+                                </div>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Username</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input primary" type="checkbox" value="" id="flexCheckChecked" checked>
+                                            <label class="form-check-label text-dark" for="flexCheckChecked">
+                                                Remeber this Device
+                                            </label>
+                                        </div>
+                                        <a class="text-primary fw-medium" href="authentication-forgot-password.html">Forgot Password ?</a>
+                                    </div>
+                                    <a href="index.html" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</a>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <p class="fs-4 mb-0 fw-medium">New to Modernize?</p>
+                                        <a class="text-primary fw-medium ms-2" href="authentication-register.html">Create an account</a>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
