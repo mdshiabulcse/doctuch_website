@@ -9,6 +9,9 @@
         <Configuration>
           <option name="path" value="$PROJECT_DIR$/doctuch/tests" />
         </Configuration>
+        <Configuration>
+          <option name="path" value="$PROJECT_DIR$/development/tests" />
+        </Configuration>
       </list>
     </option>
   </component>

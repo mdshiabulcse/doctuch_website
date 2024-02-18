@@ -20,4 +20,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/dashboard-home', [App\Http\Controllers\Admin\AdminController::class, 'index']);
+Route::get('/dashboard-home', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('dashboard-home');
+Route::get('/settings-logo', [App\Http\Controllers\Admin\SettingsController::class, 'indexLogo'])->name('settings-logo');

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Blue_Theme">
 
-<!-- Mirrored from demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/html/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Feb 2024 07:14:47 GMT -->
 <head>
     <!-- Required meta tags -->
     <meta charset="UTF-8"/>
@@ -17,12 +16,13 @@
 
     <!-- Core Css -->
     <link rel="stylesheet" href="{{asset('/admin/')}}/assets/css/styles.css"/>
+    <link rel="stylesheet" href="{{asset('/admin/')}}/assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css"/>
 
     <title>DOCTUCH</title>
     <!-- Owl Carousel  -->
     <link
         rel="stylesheet"
-        href="{{asset('/admin/')}}/assets/libs/owl.carousel/dist/{{asset('/admin/')}}/assets/owl.carousel.min.css"
+        href="{{asset('/admin/')}}/assets/libs/owl.carousel/dist/assets/owl.carousel.min.css"
     />
 </head>
 
@@ -42,7 +42,7 @@
             <!-- Start Vertical Layout Sidebar -->
             <!-- ---------------------------------- -->
             <div class="brand-logo d-flex align-items-center justify-content-between">
-                <a href="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/html/index.html"
+                <a href="{{route('dashboard-home')}}"
                    class="text-nowrap logo-img">
                     <img
                         src="{{asset('/admin/')}}/assets/images/logos/dark-logo.svg"
@@ -78,12 +78,12 @@
                     <!-- ---------------------------------- -->
                     <li class="sidebar-item">
                         <a class="sidebar-link"
-                           href="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/html/"
+                           href="{{route('dashboard-home')}}"
                            aria-expanded="false">
         <span>
-          <i class="ti ti-aperture"></i>
+          <i class="ti ti-home"></i>
         </span>
-                            <span class="hide-menu">Modern</span>
+                            <span class="hide-menu">Home</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
@@ -95,18 +95,18 @@
         <span class="d-flex">
           <i class="ti ti-chart-donut-3"></i>
         </span>
-                            <span class="hide-menu">Blog</span>
+                            <span class="hide-menu">Settings</span>
                         </a>
                         <ul aria-expanded="false" class="collapse first-level">
                             <li class="sidebar-item">
-                                <a href="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/html/blog-posts.html"
+                                <a href="{{route('settings-logo')}}"
                                    class="sidebar-link">
                                     <div
                                         class="round-16 d-flex align-items-center justify-content-center"
                                     >
                                         <i class="ti ti-circle"></i>
                                     </div>
-                                    <span class="hide-menu">Posts</span>
+                                    <span class="hide-menu">Logo</span>
                                 </a>
                             </li>
                             <li class="sidebar-item">
@@ -927,10 +927,12 @@
                                                 </a>
                                             </div>
                                             <div class="d-grid py-4 px-7 pt-8">
-                                                <a href="{{ route('logout') }}" class="btn btn-outline-primary" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                                <a href="{{ route('logout') }}" class="btn btn-outline-primary"
+                                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                                                 >Log Out</a
                                                 >
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                      class="d-none">
                                                     @csrf
                                                 </form>
                                             </div>
@@ -2683,6 +2685,8 @@
 
         @yield('content')
 
+    </div>
+
         <script>
             function handleColorTheme(e) {
                 $("html").attr("data-color-theme", e);
@@ -3141,7 +3145,9 @@
 <script src="{{asset('/admin/')}}/assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
 <script src="{{asset('/admin/')}}/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
 <script src="{{asset('/admin/')}}/assets/js/dashboards/dashboard.js"></script>
+
+<script src="{{asset('/admin/')}}/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="{{asset('/admin/')}}/assets/js/datatable/datatable-basic.init.js"></script>
 </body>
 
-<!-- Mirrored from demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/html/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Feb 2024 07:15:17 GMT -->
 </html>
