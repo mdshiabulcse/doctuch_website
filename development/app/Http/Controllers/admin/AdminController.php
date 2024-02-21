@@ -66,4 +66,10 @@ class AdminController extends Controller
     {
         //
     }
+
+    public function settingsData()
+    {
+        return 'hi';
+
+    }
 }
