@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('setting_data', function (Blueprint $table) {
             $table->id();
+            $table->string('setting_key');
+            $table->longText('setting_value');
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }
